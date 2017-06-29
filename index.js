@@ -1,15 +1,13 @@
-var reg = new RegExp('([^?=&]+)(=([^&]*))?', 'g')
 var assert = require('assert')
+var Url = require('url')
 
-module.exports = qs
+if (typeof window !== 'undefined') {
+  module.exports = require('./browser')
+} else {
+  module.exports = nanoquery
+}
 
-function qs (uri) {
-  assert.ok(typeof window !== 'undefined', 'nanoquery: expected window to exist')
-
-  var obj = {}
-  uri.replace(/^.*\?/, '').replace(reg, function (a0, a1, a2, a3) {
-    obj[window.decodeURIComponent(a1)] = window.decodeURIComponent(a3)
-  })
-
-  return obj
+function nanoquery (url) {
+  assert.equal(typeof url, 'string', 'nanoquery: url should be type string')
+  return Url.parse(url, true).query
 }
