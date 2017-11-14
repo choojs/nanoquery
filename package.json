@@ -4,12 +4,15 @@
   "repository": "choojs/nanoquery",
   "version": "1.1.1",
   "scripts": {
-    "deps": "dependency-check . && dependency-check . --extra --no-dev",
-    "start": "node .",
-    "test": "standard && npm run deps"
+    "test": "standard"
   },
-  "browser": "browser.js",
-  "dependencies": {},
+  "browser": {
+    "./index.js": "./browser.js",
+    "assert": "nanoassert"
+  },
+  "dependencies": {
+    "nanoassert": "^1.1.0"
+  },
   "devDependencies": {
     "dependency-check": "^2.9.1",
     "standard": "^10.0.2",
