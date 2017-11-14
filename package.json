@@ -1,7 +1,7 @@
 {
   "name": "nanoquery",
   "description": "Tiny querystring module",
-  "repository": "yoshuawuyts/nanoquery",
+  "repository": "choojs/nanoquery",
   "version": "1.1.0",
   "scripts": {
     "deps": "dependency-check . && dependency-check . --extra --no-dev",
