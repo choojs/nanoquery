@@ -1,4 +1,4 @@
-var reg = new RegExp('([^?=&]+)(=([^&]*))?', 'g')
+var reg = /([^?=&]+)(=([^&]*))?/g
 var assert = require('assert')
 
 module.exports = qs
