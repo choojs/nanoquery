@@ -8,7 +8,14 @@ function qs (url) {
 
   var obj = {}
   url.replace(/^.*\?/, '').replace(reg, function (a0, a1, a2, a3) {
-    obj[decodeURIComponent(a1)] = decodeURIComponent(a3)
+    var value = decodeURIComponent(a3)
+    var key = decodeURIComponent(a1)
+    if (obj.hasOwnProperty(key)) {
+      if (Array.isArray(obj[key])) obj[key].push(value)
+      else obj[key] = [obj[key], value]
+    } else {
+      obj[key] = value
+    }
   })
 
   return obj
