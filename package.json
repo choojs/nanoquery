@@ -2,7 +2,7 @@
   "name": "nanoquery",
   "description": "Tiny querystring module",
   "repository": "choojs/nanoquery",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "scripts": {
     "test": "standard"
   },
